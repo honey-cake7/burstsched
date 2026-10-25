@@ -1,0 +1,352 @@
+[
+  {
+    "config_name": "reactive_mlfq",
+    "p50_latency_us": 500.0,
+    "p99_latency_us": 500.0,
+    "throughput_events_per_sec": 62340.25345896695,
+    "context_switches": 120,
+    "worst_case_wait_us": 500.0,
+    "total_events": 400,
+    "gated_fallbacks": 0,
+    "duration_s": 0.006416399963200092,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.44764,
+        "confidence": 809,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1002": {
+        "predicted_burst_ms": 17.654836,
+        "confidence": 831,
+        "queue_hint": 3,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1003": {
+        "predicted_burst_ms": 5.308306,
+        "confidence": 237,
+        "queue_hint": 2,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.49102,
+        "confidence": 780,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      }
+    },
+    "config": {
+      "name": "reactive_mlfq",
+      "predictor": "none",
+      "confidence_gate": false,
+      "predicted_slices": false,
+      "wakeup_preempt": false,
+      "per_cpu": false,
+      "description": "Baseline reactive MLFQ \u2014 no prediction."
+    }
+  },
+  {
+    "config_name": "ewma",
+    "p50_latency_us": 800,
+    "p99_latency_us": 3000,
+    "throughput_events_per_sec": 56501.16528456463,
+    "context_switches": 120,
+    "worst_case_wait_us": 3000,
+    "total_events": 400,
+    "gated_fallbacks": 0,
+    "duration_s": 0.0070795000065118074,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.44764,
+        "confidence": 809,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1002": {
+        "predicted_burst_ms": 17.654836,
+        "confidence": 831,
+        "queue_hint": 3,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1003": {
+        "predicted_burst_ms": 5.308306,
+        "confidence": 237,
+        "queue_hint": 2,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.49102,
+        "confidence": 780,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "ewma"
+      }
+    },
+    "config": {
+      "name": "ewma",
+      "predictor": "ewma",
+      "confidence_gate": false,
+      "predicted_slices": false,
+      "wakeup_preempt": false,
+      "per_cpu": false,
+      "description": "+ EWMA prediction."
+    }
+  },
+  {
+    "config_name": "learned",
+    "p50_latency_us": 800,
+    "p99_latency_us": 3000,
+    "throughput_events_per_sec": 4298.034298059495,
+    "context_switches": 120,
+    "worst_case_wait_us": 3000,
+    "total_events": 400,
+    "gated_fallbacks": 0,
+    "duration_s": 0.0930657999124378,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.41498,
+        "confidence": 887,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1002": {
+        "predicted_burst_ms": 19.606615,
+        "confidence": 854,
+        "queue_hint": 3,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1003": {
+        "predicted_burst_ms": 1.629619,
+        "confidence": 490,
+        "queue_hint": 1,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.415206,
+        "confidence": 841,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      }
+    },
+    "config": {
+      "name": "learned",
+      "predictor": "learned",
+      "confidence_gate": false,
+      "predicted_slices": false,
+      "wakeup_preempt": false,
+      "per_cpu": false,
+      "description": "+ Learned (sklearn) predictor."
+    }
+  },
+  {
+    "config_name": "confidence_gate",
+    "p50_latency_us": 75.0,
+    "p99_latency_us": 3000,
+    "throughput_events_per_sec": 4230.315281790514,
+    "context_switches": 120,
+    "worst_case_wait_us": 3000,
+    "total_events": 400,
+    "gated_fallbacks": 76,
+    "duration_s": 0.09455560008063912,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.41498,
+        "confidence": 887,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1002": {
+        "predicted_burst_ms": 19.606615,
+        "confidence": 854,
+        "queue_hint": 3,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1003": {
+        "predicted_burst_ms": 1.629619,
+        "confidence": 490,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.415206,
+        "confidence": 841,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      }
+    },
+    "config": {
+      "name": "confidence_gate",
+      "predictor": "learned",
+      "confidence_gate": true,
+      "predicted_slices": false,
+      "wakeup_preempt": false,
+      "per_cpu": false,
+      "description": "+ Confidence-gated placement \u2014 fall back on erratic tasks."
+    }
+  },
+  {
+    "config_name": "predicted_slices",
+    "p50_latency_us": 75.0,
+    "p99_latency_us": 2550.0,
+    "throughput_events_per_sec": 5338.230277365775,
+    "context_switches": 120,
+    "worst_case_wait_us": 2550.0,
+    "total_events": 400,
+    "gated_fallbacks": 76,
+    "duration_s": 0.07493119989521801,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.41498,
+        "confidence": 887,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      },
+      "1002": {
+        "predicted_burst_ms": 19.606615,
+        "confidence": 854,
+        "queue_hint": 3,
+        "slice_hint_ms": 23.527938,
+        "predictor": "learned"
+      },
+      "1003": {
+        "predicted_burst_ms": 1.629619,
+        "confidence": 490,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.415206,
+        "confidence": 841,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      }
+    },
+    "config": {
+      "name": "predicted_slices",
+      "predictor": "learned",
+      "confidence_gate": true,
+      "predicted_slices": true,
+      "wakeup_preempt": false,
+      "per_cpu": false,
+      "description": "+ Predicted time slices \u2014 scale slice to predicted burst."
+    }
+  },
+  {
+    "config_name": "wakeup_preempt",
+    "p50_latency_us": 75.0,
+    "p99_latency_us": 2550.0,
+    "throughput_events_per_sec": 5553.604080511605,
+    "context_switches": 120,
+    "worst_case_wait_us": 2550.0,
+    "total_events": 400,
+    "gated_fallbacks": 76,
+    "duration_s": 0.0720253000035882,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.41498,
+        "confidence": 887,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      },
+      "1002": {
+        "predicted_burst_ms": 19.606615,
+        "confidence": 854,
+        "queue_hint": 3,
+        "slice_hint_ms": 23.527938,
+        "predictor": "learned"
+      },
+      "1003": {
+        "predicted_burst_ms": 1.629619,
+        "confidence": 490,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.415206,
+        "confidence": 841,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      }
+    },
+    "config": {
+      "name": "wakeup_preempt",
+      "predictor": "learned",
+      "confidence_gate": true,
+      "predicted_slices": true,
+      "wakeup_preempt": true,
+      "per_cpu": false,
+      "description": "+ Wakeup preemption \u2014 preempt hogs for short-burst tasks."
+    }
+  },
+  {
+    "config_name": "per_cpu",
+    "p50_latency_us": 75.0,
+    "p99_latency_us": 2550.0,
+    "throughput_events_per_sec": 5218.423639753301,
+    "context_switches": 120,
+    "worst_case_wait_us": 2550.0,
+    "total_events": 400,
+    "gated_fallbacks": 76,
+    "duration_s": 0.07665150007233024,
+    "predictions": {
+      "1001": {
+        "predicted_burst_ms": 0.41498,
+        "confidence": 887,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      },
+      "1002": {
+        "predicted_burst_ms": 19.606615,
+        "confidence": 854,
+        "queue_hint": 3,
+        "slice_hint_ms": 23.527938,
+        "predictor": "learned"
+      },
+      "1003": {
+        "predicted_burst_ms": 1.629619,
+        "confidence": 490,
+        "queue_hint": 0,
+        "slice_hint_ms": 0.0,
+        "predictor": "learned"
+      },
+      "1004": {
+        "predicted_burst_ms": 0.415206,
+        "confidence": 841,
+        "queue_hint": 0,
+        "slice_hint_ms": 1.0,
+        "predictor": "learned"
+      }
+    },
+    "config": {
+      "name": "per_cpu",
+      "predictor": "learned",
+      "confidence_gate": true,
+      "predicted_slices": true,
+      "wakeup_preempt": true,
+      "per_cpu": true,
+      "description": "+ Per-CPU queues with burst-aware placement (stretch)."
+    }
+  }
+]
